@@ -14,12 +14,12 @@ Computer Vision • Deep Learning • Explainable AI • Cloud • MLOps
 
 | Role     | Responsibility                  |
 | -------- | ------------------------------- |
-| Member 1 | Web Development / UI/UX         |
-| Member 2 | Deployment / MLOps / Cloud      |
-| Member 3 | Model Training                  |
-| Member 4 | Data Preparation                |
-| Member 5 | Benchmarking / Model Validation |
-| Member 6 | Documentation / Validation      |
+| Bala     | Web Development / UI/UX         |
+| Abdur    | Deployment / MLOps / Cloud      |
+| Daran    | Model Training                  |
+| Asif     | Data Preparation                |
+| Abishake | Benchmarking / Model Validation |
+| Amjith   | Documentation / Validation      |
 
 > Team member names will be added once finalized.
 
