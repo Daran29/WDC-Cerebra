@@ -6,6 +6,7 @@
 [![Three.js](https://img.shields.io/badge/Three.js-0.185-black?logo=threedotjs&logoColor=white)](https://threejs.org/)
 [![Accuracy](https://img.shields.io/badge/Val_Accuracy-99.52%25-brightgreen)](file:///checkpoints/best_efficientnetb0.pth)
 [![AWS Ready](https://img.shields.io/badge/AWS-Terraform_Ready-FF9900?logo=amazonaws&logoColor=white)](file:///terraform/)
+[![CI Pipeline](https://github.com/pcabdur/WDC-Cerebra/actions/workflows/ci.yml/badge.svg)](https://github.com/pcabdur/WDC-Cerebra/actions/workflows/ci.yml)
 
 > **Full-Stack Clinical Decision Support & Deep Learning Platform**  
 > End-to-end multi-class Brain MRI classification (`Glioma`, `Meningioma`, `No Tumor`, `Pituitary`) powered by **EfficientNet-B0**, real-time **Explainable AI (Grad-CAM, LIME, SHAP)**, interactive **Three.js 3D Brain Mapping**, and automated **Institutional PDF Report Generation**.
@@ -21,6 +22,20 @@
 4. **Interactive 3D Anatomical Projection:** Dynamic Three.js brain mesh highlighting tumor coordinates and lobe attributions.
 5. **Clinical PDF Diagnostic Reports:** Generates branded, institutional PDF reports embedding side-by-side MRI scans, Grad-CAM overlays, probability breakdowns, and physician attestation signature lines.
 6. **Cloud-Native & Terraform Ready:** Includes production multi-stage Dockerfiles, Docker Compose stack, and complete AWS Terraform Infrastructure as Code (IaC).
+
+---
+
+## 📑 Table of Contents
+
+- [📌 Executive Summary](#-executive-summary)
+- [🗂️ Project Directory Architecture](#️-project-directory-architecture)
+- [✨ Features & Capabilities](#-features--capabilities)
+- [☁️ AWS Cloud Deployment & Terraform Guide](#️-aws-cloud-deployment--terraform-guide)
+- [🚀 Local Quickstart Guide](#-local-quickstart-guide)
+- [📡 API Endpoints Reference](#-api-endpoints-reference)
+- [🧪 Testing & Verification](#-testing--verification)
+- [👥 Contributors](#-contributors)
+- [🛡️ Clinical & Legal Notice](#️-clinical--legal-notice)
 
 ---
 
@@ -259,6 +274,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 🧪 Testing & Verification
 
+### Continuous Integration (CI)
+This project uses GitHub Actions for continuous integration. The CI pipeline automatically runs on pushes and pull requests to the `main` branch to verify:
+- **Backend Tests:** Runs the full Pytest suite against the FastAPI backend.
+- **Frontend Build:** Validates that the Vite React application compiles successfully.
+- **Docker Build Validation:** Verifies that both backend and frontend Dockerfiles build without errors.
+
 ### Automated PyTest Suite (15/15 Unit & Integration Tests)
 ```bash
 pytest tests/test_api.py -v
@@ -269,6 +290,19 @@ pytest tests/test_api.py -v
 cd frontend
 npm run build
 ```
+
+---
+
+## 👥 Contributors
+
+A huge thank you to the brilliant minds helping to build and maintain Cerebra! 
+
+1. [ Add Contributor 1 here ]
+2. [ Add Contributor 2 here ]
+3. [ Add Contributor 3 here ]
+4. [ Add Contributor 4 here ]
+5. [ Add Contributor 5 here ]
+6. [ Add Contributor 6 here ]
 
 ---
 
