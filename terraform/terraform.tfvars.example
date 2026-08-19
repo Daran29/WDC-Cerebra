@@ -1,0 +1,13 @@
+aws_region       = "us-east-1"
+environment      = "production"
+project_name     = "cerebra-brain-tumor-xai"
+
+# Recommended Options:
+# "c6i.xlarge"   -> 4 vCPUs, 8 GB RAM (Compute-Optimized with AVX-512, ~$0.17/hr) [BEST FOR CPU XAI]
+# "t3.xlarge"    -> 4 vCPUs, 16 GB RAM (General Purpose, ~$0.166/hr)
+# "g4dn.xlarge"  -> 4 vCPUs, 16 GB RAM, 1x NVIDIA T4 16GB GPU (~$0.526/hr) [BEST FOR FAST GPU XAI]
+instance_type    = "c6i.xlarge"
+
+volume_size_gb   = 40
+allowed_ssh_cidr = "0.0.0.0/0"
+key_name         = "your-aws-ec2-keypair-name"

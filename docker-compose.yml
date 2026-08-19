@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # ── FASTAPI & PYTORCH ML ENGINE ──
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cerebra_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8000
+      - DEVICE=cpu
+      - MODEL_CHECKPOINT_PATH=/app/checkpoints/best_efficientnetb0.pth
+      - LIME_NUM_SAMPLES=100
+      - SHAP_BACKGROUND_SIZE=5
+    deploy:
+      resources:
+        limits:
+          cpus: '3.50'
+          memory: 6G
+        reservations:
+          cpus: '1.00'
+          memory: 2G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # ── REACT 19 & VITE PRODUCTION WEB APP ──
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cerebra_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00'
+          memory: 1G
